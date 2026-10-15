@@ -1,0 +1,11 @@
+﻿# Python / environment
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# Secrets and local config (never commit these)
+.env
+*.key
+# Logs and temp files
+logs/
+*.log
