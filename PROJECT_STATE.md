@@ -3,23 +3,26 @@
 **Last updated:** 2026-10-16
 
 ## Status
-Milestone 1 (setup) done. Starting Milestone 2 (server + sandbox).
+M1, M2 done. M3 half done: server verified with a Python MCP client over HTTP + token. Not yet deployed.
 
 ## Completed
-- Python 3.13, git, venv, `mcp[cli]<2` installed (requirements.txt saved)
-- Folder structure and handoff files created
+- Sandbox (`mcp_file_server/sandbox.py`) + tests; all escape attempts rejected
+- 10 tools (`mcp_file_server/tools.py`) + 90 passing tests
+- `server.py`: Streamable HTTP, bearer-token auth (MCP_TOKEN env var), call logging to `logs/calls.log`
+- `scripts/smoke_test.py` passes; output saved in `evidence/`
+- Pushed to https://github.com/graeyere/mcp-file-server
 
 ## Remaining
-- M2 sandbox.py, tools (8+), tests
-- M3 verify with MCP Inspector and a real client
-- M4 token auth, HTTPS tunnel, process manager
-- M5 two-session demo
-- M6 README, report, transcript, demo script
+- M3: connect a real MCP client (Inspector / Claude)
+- M4: HTTPS tunnel + process manager, survive restart
+- M5: two-session demo (PLAN_LOG, CHECKPOINTS used by agents)
+- M6: README, report, transcript, demo script
 
-## Key paths
-- Server package: `mcp_file_server/`
-- Sandbox root: `workspace/`
-- Tests: `tests/`
+## Key facts
+- Run: set `$env:MCP_TOKEN`, then `python -m mcp_file_server.server` (127.0.0.1:8000, endpoint /mcp, /health is open)
+- Sandbox root: `workspace/` (env WORKSPACE_ROOT overrides)
+- Tests: `pytest -q` (90 passed, 1 skipped: symlink test needs Developer Mode)
+- Dependencies pinned: `mcp<2`
 
 ## Next action
-Write `mcp_file_server/sandbox.py` (path safety) and its tests.
+Test with MCP Inspector, then set up the tunnel.
