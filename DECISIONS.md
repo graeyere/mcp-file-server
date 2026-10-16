@@ -7,3 +7,4 @@
 
 6. **ngrok abandoned, Cloudflare quick tunnel used.** The ngrok agent was too old for free accounts (ERR_NGROK_121), the winget copy was blocked ("Access is denied"), and the zip download was reset by the network. `cloudflared tunnel --url http://127.0.0.1:8000` needs no account. Tradeoff: the URL changes on every restart and has no uptime guarantee. A named Cloudflare tunnel or ngrok static domain would fix this.
 7. **Token auth in the server itself, not the tunnel.** The tunnel is just a pipe; `/mcp` returns 401 without the bearer token. `/health` is open and returns only "ok".
+8. **NSSM as process manager.** Slides list pm2/systemd/Docker; pm2 needs Node.js and systemd does not exist on Windows. NSSM runs the venv Python and cloudflared as auto-restarting Windows services. The venv python.exe is referenced by full path so the service finds its packages. Crash recovery was tested by killing the server process (new PID, health 200).

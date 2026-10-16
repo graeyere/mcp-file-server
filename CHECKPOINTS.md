@@ -12,3 +12,8 @@
 - Done: tunnel works, token auth verified over HTTPS, all 10 tools pass via the public URL
 - Resume at: process manager (keep server + tunnel alive after restart), then real MCP client, then 2-session demo
 - Note: the quick-tunnel URL is temporary and changes on restart; the current one is not stored in the repo
+
+## CP-4 (2026-10-16): Deployment complete
+- Done: services auto-start/auto-restart, crash recovery verified, token only in service settings
+- Resume at: connect a real MCP client (M3b), then two-session demo (M5)
+- Note: quick-tunnel URL changes on restart; read it from logs\tunnel_err.log
