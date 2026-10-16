@@ -1,0 +1,74 @@
+﻿2026-10-16 12:41:28,691 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:28,704 INFO CALL write_file(path='demo/PROJECT_STATE.md', content='# PROJECT STATE\n\n## Goal\nWrite demo/report.md, a short report titled "MCP..., overwrite=True) ok 10ms
+2026-10-16 12:41:29,448 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:29,451 INFO CALL write_file(path='demo/PLAN_LOG.md', content='# PLAN LOG\n\n- Session 1 started: steps 1-6 assigned.\n', overwrite=True) ok 3ms
+2026-10-16 12:41:30,086 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:30,089 INFO CALL write_file(path='demo/CHECKPOINTS.md', content='# CHECKPOINTS\n\n(none yet)\n', overwrite=True) ok 3ms
+2026-10-16 12:41:30,846 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:30,852 INFO CALL write_file(path='demo/DECISIONS.md', content='# DECISIONS\n\n- Each report section is written only from its matching sourc..., overwrite=True) ok 6ms
+2026-10-16 12:41:36,328 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:36,333 INFO CALL write_file(path='demo/sources/1_tools.txt', content='Tools are actions the model can invoke, such as write_file. They are model-c..., overwrite=True) ok 5ms
+2026-10-16 12:41:37,023 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:37,028 INFO CALL write_file(path='demo/sources/2_resources.txt', content='Resources are read-only context addressed by a URI, such as file:///projects..., overwrite=True) ok 4ms
+2026-10-16 12:41:37,902 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:37,907 INFO CALL write_file(path='demo/sources/3_prompts.txt', content='Prompts are reusable message templates the user picks, often as slash comman..., overwrite=True) ok 4ms
+2026-10-16 12:41:38,571 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:38,575 INFO CALL write_file(path='demo/sources/4_transports.txt', content='stdio runs the server as a subprocess of the host on the same machine. Strea..., overwrite=True) ok 3ms
+2026-10-16 12:41:39,851 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:39,854 INFO CALL write_file(path='demo/report.md', content='# MCP in four parts\n\n## 1 Tools\n\nTODO\n\n## 2 Resources\n\nTODO\n\n## 3 ..., overwrite=True) ok 3ms
+2026-10-16 12:41:41,922 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:41,924 INFO CALL read_file(path='demo/sources/1_tools.txt', offset=0, limit=20000) ok 2ms
+2026-10-16 12:41:45,194 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:45,196 INFO CALL str_replace(path='demo/report.md', old_str='## 1 Tools\n\nTODO', new_str='## 1 Tools\n\nTools are actions the model can invoke, such as write_file. Th...) ok 3ms
+2026-10-16 12:41:45,866 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:45,867 INFO CALL read_file(path='demo/sources/2_resources.txt', offset=0, limit=20000) ok 1ms
+2026-10-16 12:41:50,362 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:50,365 INFO CALL str_replace(path='demo/report.md', old_str='## 2 Resources\n\nTODO', new_str='## 2 Resources\n\nResources are read-only context addressed by a URI, such a...) ok 3ms
+2026-10-16 12:41:51,289 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:51,291 INFO CALL append_file(path='demo/PLAN_LOG.md', content='- Step 1 done: created PROJECT_STATE.md, PLAN_LOG.md, CHECKPOINTS.md, DECISI...) ok 2ms
+2026-10-16 12:41:51,937 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:51,938 INFO CALL read_file(path='demo/PROJECT_STATE.md', offset=0, limit=20000) ok 1ms
+2026-10-16 12:41:58,485 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:58,488 INFO CALL str_replace(path='demo/PROJECT_STATE.md', old_str='## Status\n- Steps 1-5: in progress this session (see below once step 6 is d..., new_str='## Status\n- DONE (session 1): steps 1, 2, 3, 4, 5, 6.\n- Report state: sect...) ok 3ms
+2026-10-16 12:41:59,253 INFO Processing request of type CallToolRequest
+2026-10-16 12:41:59,257 INFO CALL write_file(path='demo/CHECKPOINTS.md', content='# CHECKPOINTS\n\n## Checkpoint 1 - end of session 1 (Fri 2026-10-16)\n\nDONE..., overwrite=True) ok 3ms
+2026-10-16 12:43:24,532 INFO Processing request of type CallToolRequest
+2026-10-16 12:43:24,535 INFO CALL list_files(path='demo', recursive=True, max_entries=200) ok 3ms
+2026-10-16 12:43:25,263 INFO Processing request of type CallToolRequest
+2026-10-16 12:43:25,269 INFO CALL search_text(query='TODO', path='demo', max_results=50) ok 6ms
+2026-10-16 12:48:36,011 INFO Created new transport with session ID: 2996b1fb25f04471930d091f5a766ae8
+2026-10-16 12:48:36,032 INFO Terminating session: 2996b1fb25f04471930d091f5a766ae8
+2026-10-16 12:48:36,712 INFO Processing request of type CallToolRequest
+2026-10-16 12:48:36,715 INFO CALL read_file(path='demo/PROJECT_STATE.md', offset=0, limit=20000) ok 3ms
+2026-10-16 12:48:37,389 INFO Processing request of type CallToolRequest
+2026-10-16 12:48:37,390 INFO CALL read_file(path='demo/CHECKPOINTS.md', offset=0, limit=20000) ok 1ms
+2026-10-16 12:48:41,451 INFO Processing request of type CallToolRequest
+2026-10-16 12:48:41,453 INFO CALL read_file(path='demo/report.md', offset=0, limit=20000) ok 1ms
+2026-10-16 12:48:42,063 INFO Processing request of type CallToolRequest
+2026-10-16 12:48:42,065 INFO CALL read_file(path='demo/sources/3_prompts.txt', offset=0, limit=20000) ok 1ms
+2026-10-16 12:48:42,679 INFO Processing request of type CallToolRequest
+2026-10-16 12:48:42,680 INFO CALL read_file(path='demo/sources/4_transports.txt', offset=0, limit=20000) ok 1ms
+2026-10-16 12:48:46,546 INFO Processing request of type CallToolRequest
+2026-10-16 12:48:46,549 INFO CALL str_replace(path='demo/report.md', old_str='## 3 Prompts\n\nTODO', new_str='## 3 Prompts\n\nPrompts are reusable message templates that the user picks, ...) ok 3ms
+2026-10-16 12:48:47,385 INFO Processing request of type CallToolRequest
+2026-10-16 12:48:47,387 INFO CALL str_replace(path='demo/report.md', old_str='## 4 Transports\n\nTODO', new_str='## 4 Transports\n\nstdio runs the server as a subprocess of the host on the ...) ok 2ms
+2026-10-16 12:48:49,829 INFO Processing request of type CallToolRequest
+2026-10-16 12:48:49,831 WARNING CALL search_text(query='TODO', path='demo/report.md', max_results=50) rejected: 'demo/report.md' is not a directory.
+2026-10-16 12:48:50,443 INFO Processing request of type CallToolRequest
+2026-10-16 12:48:50,445 INFO CALL read_file(path='demo/report.md', offset=0, limit=20000) ok 2ms
+2026-10-16 12:48:53,928 INFO Processing request of type CallToolRequest
+2026-10-16 12:48:53,934 INFO CALL search_text(query='TODO', path='demo', max_results=50) ok 6ms
+2026-10-16 12:49:05,418 INFO Processing request of type CallToolRequest
+2026-10-16 12:49:05,421 INFO CALL write_file(path='demo/PROJECT_STATE.md', content='# PROJECT STATE\n\n## Goal\nWrite demo/report.md, a short report titled "MCP..., overwrite=True) ok 2ms
+2026-10-16 12:49:06,017 INFO Processing request of type CallToolRequest
+2026-10-16 12:49:06,019 INFO CALL append_file(path='demo/CHECKPOINTS.md', content='\n\n## Checkpoint 2 - end of session 2 (Fri 2026-10-16) - SUPERSEDES CHECKPO...) ok 2ms
+2026-10-16 12:49:06,642 INFO Processing request of type CallToolRequest
+2026-10-16 12:49:06,644 INFO CALL append_file(path='demo/PLAN_LOG.md', content='\n- Session 2, step 7 done: wrote sections 3 (Prompts) and 4 (Transports) in...) ok 2ms
+2026-10-16 12:50:29,892 INFO Created new transport with session ID: 17ce0c23d6454b718df05e3a44eae50d
+2026-10-16 12:50:29,896 INFO Terminating session: 17ce0c23d6454b718df05e3a44eae50d
+2026-10-16 12:50:37,674 INFO Processing request of type CallToolRequest
+2026-10-16 12:50:37,676 INFO CALL read_file(path='demo/report.md', offset=0, limit=20000) ok 2ms
+2026-10-16 12:50:38,307 INFO Processing request of type CallToolRequest
+2026-10-16 12:50:38,308 INFO CALL read_file(path='demo/CHECKPOINTS.md', offset=0, limit=20000) ok 1ms
+2026-10-16 12:50:39,039 INFO Processing request of type CallToolRequest
+2026-10-16 12:50:39,045 INFO CALL search_text(query='TODO', path='demo', max_results=50) ok 5ms

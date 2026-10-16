@@ -183,4 +183,5 @@ Tool failures return `isError=true` with a short readable message (no stack trac
 
 ## Handoff protocol
 
-Agents hand work over through files, not conversation history. Each agent session reads `PROJECT_STATE.md` and `CHECKPOINTS.md` first, works, then appends to `PLAN_LOG.md`, records choices in `DECISIONS.md`, and updates the other two. The demo in `workspace/demo/` shows two separate Claude chats finishing one report this way. The evidence is in `evidence/` (transcripts and `demo_calls.log`).
+Agents hand work over through files, not conversation history. Each agent session reads `PROJECT_STATE.md` and `CHECKPOINTS.md` first, works, then appends to `PLAN_LOG.md`, records choices in `DECISIONS.md`, and updates the other two. The demo in `workspace/demo/` shows two separate Claude chats finishing one report this way. The evidence is in `evidence/` (transcripts and `demo_calls.txt`).
+

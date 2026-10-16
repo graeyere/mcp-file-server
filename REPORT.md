@@ -43,7 +43,7 @@ Ten single-purpose tools: `list_files`, `read_file`, `write_file`, `append_file`
 
 ## 6. Agent efficiency and management
 
-Numbers below come from the server's own call log (`evidence/demo_calls.log`, 35 calls), not from what the agents said about themselves. The agents reported about 20 and 16 calls; the server saw fewer (probably because loading tools is not a server call).
+Numbers below come from the server's own call log (`evidence/demo_calls.txt`, 35 calls), not from what the agents said about themselves. The agents reported about 20 and 16 calls; the server saw fewer (probably because loading tools is not a server call).
 
 | Group | Server calls | Limit given | Notes |
 |---|---|---|---|
@@ -68,4 +68,5 @@ Numbers below come from the server's own call log (`evidence/demo_calls.log`, 35
 
 ## 8. Evidence
 
-All in the repository: `evidence/` (smoke-test output locally, through the public tunnel and through the services; 401 and health checks; crash-recovery test; Session 1 and Session 2 transcripts; `demo_calls.log`), `workspace/demo/` (the agents' own PROJECT_STATE, PLAN_LOG, CHECKPOINTS, DECISIONS and the finished `report.md`), and the git history, one commit per milestone.
+All in the repository: `evidence/` (smoke-test output locally, through the public tunnel and through the services; 401 and health checks; crash-recovery test; Session 1 and Session 2 transcripts; `demo_calls.txt`), `workspace/demo/` (the agents' own PROJECT_STATE, PLAN_LOG, CHECKPOINTS, DECISIONS and the finished `report.md`), and the git history, one commit per milestone.
+
