@@ -1,0 +1,34 @@
+Work in a sandbox through the mcp-file-server tools, only inside the folder demo/.
+Rules: read before you write; use search_text instead of reading whole files when you can; never call delete_file; do not retry a failing call without changing something; use at most 25 tool calls.
+
+Whole project: write demo/report.md, a short report titled "MCP in four parts" with four sections: 1 Tools, 2 Resources, 3 Prompts, 4 Transports. Each section is 2-3 sentences written ONLY from the matching note in demo/sources/.
+
+In THIS session do only steps 1-6, then stop:
+1. Create demo/PROJECT_STATE.md, demo/PLAN_LOG.md, demo/CHECKPOINTS.md, demo/DECISIONS.md. PROJECT_STATE.md must contain the goal, this 8-step plan, which steps are done, and the exact next action.
+2. Create these source notes in demo/sources/:
+ 1_tools.txt: Tools are actions the model can invoke, such as write_file. They are model-controlled and can change the outside world. Each tool has a name, a description and a JSON input schema.
+ 2_resources.txt: Resources are read-only context addressed by a URI, such as file:///projects/demo/PROJECT_STATE.md. They are application-controlled: the host decides what to attach.
+ 3_prompts.txt: Prompts are reusable message templates the user picks, often as slash commands such as /review-code. They are user-controlled and give a repeatable workflow with fixed wording.
+ 4_transports.txt: stdio runs the server as a subprocess of the host on the same machine. Streamable HTTP serves it at a URL so any client that can reach it can connect, which means authentication must be added.
+3. Create demo/report.md with the title and four headings, and the single word TODO under each heading.
+4. Write section 1 (read its source first, then replace its TODO with str_replace).
+5. Write section 2 the same way.
+6. Append to PLAN_LOG.md, update PROJECT_STATE.md, and write a checkpoint in CHECKPOINTS.md that says exactly what is done and what remains.
+Steps 7 and 8 are for the next session; record them in PROJECT_STATE.md:
+7. Write sections 3 and 4. 8. Verify no TODO remains (search_text), re-read report.md, update all handoff files.
+Then STOP and tell me you stopped. Do not start section 3.
+
+Gathering the necessary tools before responding.
+Gathering the necessary tools before responding.
+I’ll set up the project files and sources, write sections 1 and 2 of the report, then stop. First I’m loading the file-server tools.
+
+Used mcp-file-server
+I stopped after step 6, as you asked. I did not start section 3.
+
+Steps 1–2: I created the four handoff files and the four source notes in demo/sources/.
+Step 3: demo/report.md exists with the title “MCP in four parts” and four headings.
+Steps 4–5: Sections 1 (Tools) and 2 (Resources) are written, each from its own source note, which I read first.
+Step 6: I appended to PLAN_LOG.md, updated PROJECT_STATE.md, and wrote a checkpoint in CHECKPOINTS.md.
+Sections 3 (Prompts) and 4 (Transports) still contain TODO. PROJECT_STATE.md and the checkpoint record steps 7 and 8 for the next session, with the exact next action: read demo/sources/3_prompts.txt.
+
+I used about 20 of the 25 tool calls. I never called delete_file, and no call failed.

@@ -1,0 +1,1 @@
+Prompts are reusable message templates the user picks, often as slash commands such as /review-code. They are user-controlled and give a repeatable workflow with fixed wording.

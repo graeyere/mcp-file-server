@@ -1,0 +1,30 @@
+Use the mcp-file-server tools. Another session worked on a project in demo/ and stopped. You have no memory of it. Start by reading demo/PROJECT_STATE.md and demo/CHECKPOINTS.md, work out what is done and what remains, and finish the remaining work.
+Rules: read before you write; use search_text instead of reading whole files; never call delete_file; do not retry a failing call without changing something; at most 20 tool calls.
+When finished, verify the result, update the handoff files, and tell me what you found already done, what you did, and how you verified it.
+
+Getting started on the request.
+Getting started on the request.
+I’ll start by loading the file-server tools, then read the two handoff files in demo/ to see where the earlier session stopped.
+
+Used mcp-file-server
+The handoff files say sections 3 and 4 are still TODO. I’ll check that against the report itself and read the two source notes I need.
+
+Used mcp-file-server
+There are no TODO matches in report.md; the remaining hits are only the handoff files describing the old state. Now I’ll update the handoff files so the next session isn’t misled.
+
+Used mcp-file-server
+demo/report.md is now complete, with all four sections written from their source notes and no TODO left in it. I used 16 of the 20 tool calls and never called delete_file.
+
+Already done when I arrived: steps 1–6 were really done, not just claimed. report.md had the title and four headings, with sections 1 (Tools) and 2 (Resources) written. Sections 3 (Prompts) and 4 (Transports) were still TODO, which matched both handoff files.
+
+What I did:
+
+Section 3 (Prompts): I read sources/3_prompts.txt and replaced the TODO with three sentences based only on that note.
+Section 4 (Transports): I read sources/4_transports.txt and did the same.
+Handoff files: I rewrote PROJECT_STATE.md so every step shows as done and the next action is none. I appended a Checkpoint 2 to CHECKPOINTS.md that supersedes the old one, and added to PLAN_LOG.md.
+How I verified:
+
+A search_text for “TODO” over demo/ returned no matches in report.md. The only hits were history notes in the handoff files, which is expected.
+I re-read the whole report, and all four sections are present at 2–3 sentences each.
+One call failed along the way: search_text takes a folder, not a file, and I had passed demo/report.md. I retried with demo instead of repeating the same call, and noted it in PROJECT_STATE.md and PLAN_LOG.md.
+The state file still says “at most 25 tool calls” per session. I left that as written and followed your limit of 20 for this run.

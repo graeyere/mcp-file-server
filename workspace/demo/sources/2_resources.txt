@@ -1,0 +1,1 @@
+Resources are read-only context addressed by a URI, such as file:///projects/demo/PROJECT_STATE.md. They are application-controlled: the host decides what to attach.

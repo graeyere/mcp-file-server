@@ -1,0 +1,1 @@
+Tools are actions the model can invoke, such as write_file. They are model-controlled and can change the outside world. Each tool has a name, a description and a JSON input schema.

@@ -1,0 +1,1 @@
+stdio runs the server as a subprocess of the host on the same machine. Streamable HTTP serves it at a URL so any client that can reach it can connect, which means authentication must be added.
