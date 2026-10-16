@@ -17,3 +17,8 @@
 - Done: services auto-start/auto-restart, crash recovery verified, token only in service settings
 - Resume at: connect a real MCP client (M3b), then two-session demo (M5)
 - Note: quick-tunnel URL changes on restart; read it from logs\tunnel_err.log
+
+## CP-5 (2026-10-16): Submission-ready
+- Done: all mandatory requirements; demo evidence in repo
+- Resume at: live demo, then rotate the token
+- Note: do not restart mcp-tunnel before the demo (the URL would change)

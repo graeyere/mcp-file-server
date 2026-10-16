@@ -16,3 +16,9 @@
 ## 2026-10-16 (11:50)
 - [done] M4b: NSSM services mcp-file-server + mcp-tunnel; smoke test passes through them; crash-recovery test passed (evidence/service_restart_test.txt)
 - [next] M3b real MCP client, then M5 two-session demo
+
+## 2026-10-16 (17:55)
+- [done] M3b: Claude custom connector connected via token-in-URL (no header option on this account)
+- [done] M5: two-session demo run and logged (evidence/demo_calls.txt)
+- [done] M6: README, REPORT; evidence committed
+- [next] live demo; rotate token afterwards
