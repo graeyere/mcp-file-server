@@ -1,4 +1,4 @@
-"""MCP file server: exposes FileTools over Streamable HTTP with bearer-token auth."""
+﻿"""MCP file server: exposes FileTools over Streamable HTTP with bearer-token auth."""
 import argparse
 import hmac
 import logging
@@ -130,25 +130,39 @@ def file_info(path: str) -> str:
 
 
 class TokenAuth:
-    """ASGI wrapper: every HTTP request needs 'Authorization: Bearer <token>'."""
+    """ASGI wrapper. Accepts the token as 'Authorization: Bearer <token>' or as a
+    URL prefix '/t/<token>/...' (for clients that cannot send headers)."""
 
     def __init__(self, app, token: str):
         self.app = app
+        self.token = token
         self.expected = f"Bearer {token}".encode()
 
     async def __call__(self, scope, receive, send):
         if scope["type"] != "http":
             await self.app(scope, receive, send)
             return
-        if scope["path"] == "/health":
+        path = scope["path"]
+        if path == "/health":
             await self._reply(send, 200, b"ok")
             return
+
         given = dict(scope["headers"]).get(b"authorization", b"")
         if hmac.compare_digest(given, self.expected):
             await self.app(scope, receive, send)
-        else:
-            log.warning("AUTH rejected request to %s", scope["path"])
-            await self._reply(send, 401, b"unauthorized")
+            return
+
+        parts = path.split("/", 3)  # ['', 't', '<token>', 'rest...']
+        if len(parts) >= 3 and parts[1] == "t" and hmac.compare_digest(
+            parts[2].encode(), self.token.encode()
+        ):
+            rest = "/" + (parts[3] if len(parts) > 3 else "")
+            scope = dict(scope, path=rest, raw_path=rest.encode())
+            await self.app(scope, receive, send)
+            return
+
+        log.warning("AUTH rejected a request")  # never log the path: it may hold the token
+        await self._reply(send, 401, b"unauthorized")
 
     @staticmethod
     async def _reply(send, status: int, body: bytes):
@@ -172,9 +186,9 @@ def main():
     port = int(os.environ.get("PORT", "8000"))
     app = TokenAuth(mcp.streamable_http_app(), token)
     log.info("Starting on 127.0.0.1:%s, workspace=%s", port, tools.sb.root)
-    uvicorn.run(app, host="127.0.0.1", port=port)
+    # access_log=False: access logs would print URLs, which can contain the token
+    uvicorn.run(app, host="127.0.0.1", port=port, access_log=False)
 
 
 if __name__ == "__main__":
     main()
-
